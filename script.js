@@ -45,7 +45,7 @@ const reveal = new IntersectionObserver(
 );
 
 document
-  .querySelectorAll('.timeline-card, .project-card, .education-card, .keyboard-board')
+  .querySelectorAll('.timeline-card, .project-card, .skills-card, .education-card, .keyboard-board')
   .forEach((element) => {
     element.classList.add('reveal');
     reveal.observe(element);

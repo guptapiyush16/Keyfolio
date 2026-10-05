@@ -962,7 +962,137 @@ a.project-badge:hover {
   margin-bottom: 30px;
 }
 
-/* 04 / Education */
+/* 04 / Skills Section */
+.skills-section {
+  max-width: 1240px;
+}
+
+.skills-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 48px;
+  align-items: center;
+  border: var(--line) solid var(--ink);
+  background: #fffdf5;
+  border-radius: 20px;
+  padding: 48px 44px;
+  box-shadow: var(--shadow);
+}
+
+.skills-kicker-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.skills-badge {
+  border: 2px solid var(--ink);
+  border-radius: 99px;
+  padding: 3px 10px;
+  font: 700 9px var(--mono);
+  background: var(--yellow);
+  box-shadow: var(--shadow-xs);
+  letter-spacing: 0.04em;
+}
+
+.skills-card-content h2 {
+  font-size: clamp(2.3rem, 4.4vw, 4.2rem);
+  line-height: 1.02;
+  letter-spacing: -0.06em;
+  margin: 12px 0 26px;
+}
+
+.skills-lede {
+  font-size: 16px;
+  line-height: 1.55;
+  color: #4a4740;
+  max-width: 620px;
+  margin: 0 0 28px;
+}
+
+.skills-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  border-top: var(--line) solid var(--ink);
+  padding-top: 22px;
+}
+
+.skills-pillar {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pillar-num {
+  font: 700 13px var(--mono);
+  color: var(--coral);
+}
+
+.skills-pillar b {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.skills-pillar small {
+  font: 11px var(--mono);
+  color: #555149;
+  line-height: 1.35;
+}
+
+.skills-card-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+}
+
+.skills-stamp {
+  position: absolute;
+  top: -8px;
+  right: -4px;
+  width: 86px;
+  height: 86px;
+  background: var(--coral);
+  border: var(--line) solid var(--ink);
+  border-radius: 50%;
+  font: 700 11px/1.1 var(--mono);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  transform: rotate(14deg);
+  box-shadow: var(--shadow-sm);
+  z-index: 4;
+}
+
+.skills-mini-terminal {
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 8px 8px 0 var(--yellow);
+  transform: rotate(-2deg);
+  transition: transform 0.2s ease;
+}
+
+.skills-mini-terminal:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.skills-mini-terminal .terminal-body {
+  padding: 24px 20px 28px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.skills-mini-terminal .terminal-highlight {
+  font-size: 15px;
+  margin: 4px 0 10px;
+}
+
+/* 05 / Education */
 .education-section {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
@@ -1313,6 +1443,14 @@ a.behind-val:hover {
   .resume-banner {
     grid-template-columns: 1fr;
   }
+  .skills-card {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 32px 24px;
+  }
+  .skills-mini-terminal {
+    transform: none;
+  }
   .hero {
     padding-top: 50px;
   }
@@ -1397,6 +1535,17 @@ a.behind-val:hover {
   .skill-grid,
   .project-grid {
     grid-template-columns: 1fr;
+  }
+  .skills-pillars {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .skills-stamp {
+    width: 72px;
+    height: 72px;
+    font-size: 9px;
+    top: -6px;
+    right: 0;
   }
   .timeline-row {
     grid-template-columns: 1fr 18px 1fr;
