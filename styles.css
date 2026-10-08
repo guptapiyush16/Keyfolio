@@ -1663,3 +1663,50 @@ a.behind-val:hover {
   .nav-cta { display: none; }          /* resume link is already inside the menu */
   .menu-toggle { margin-left: auto; }
 }
+
+/* ---- Mobile navbar + layout fixes ---- */
+.mobile-menu[hidden] { display: none; }
+
+@media (min-width: 901px) {
+  .mobile-menu { display: none !important; }
+}
+
+html, body { overflow-x: clip; }
+
+@media (max-width: 900px) {
+  .mobile-menu {
+    max-height: calc(100dvh - 80px);
+    overflow-y: auto;
+  }
+  .mobile-menu a {
+    padding: 12px 0;
+    border-bottom: 1.5px solid rgba(23, 23, 23, 0.12);
+  }
+  .mobile-menu a:last-child { border-bottom: 0; }
+  html { scroll-padding-top: 76px; }
+}
+
+@media (max-width: 640px) {
+  .mobile-menu { top: 60px; max-height: calc(100dvh - 60px); }
+  html { scroll-padding-top: 62px; }
+
+  .hero h1 { font-size: clamp(2.4rem, 11.5vw, 3.4rem); }
+
+  .timeline-row { grid-template-columns: 1fr; gap: 10px; }
+  .timeline-marker { display: none; }
+  .timeline-date,
+  .timeline-card { grid-column: 1; grid-row: auto; }
+}
+
+@media (max-width: 480px) {
+  .nav-cta { display: none; }
+  .menu-toggle { margin-left: auto; }
+}
+
+@media (max-width: 400px) {
+  .keyboard-row { gap: 3px; }
+  .keyboard-row.offset { padding-left: 8px; }
+  .keyboard-row span { width: 24px; height: 32px; font-size: 9px; }
+  .keyboard-row span.key-wide { width: 38px; }
+  .keyboard-row span.key-enter { width: 30px; }
+}
