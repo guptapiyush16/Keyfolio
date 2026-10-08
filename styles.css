@@ -1623,3 +1623,43 @@ a.behind-val:hover {
     animation: none;
   }
 }
+
+
+/* ---- Mobile navbar fixes ---- */
+
+/* make the `hidden` attribute win again */
+.mobile-menu[hidden] { display: none; }
+
+/* never show the mobile menu on desktop */
+@media (min-width: 901px) {
+  .mobile-menu { display: none !important; }
+}
+
+@media (max-width: 900px) {
+  .mobile-menu {
+    max-height: calc(100dvh - 80px);
+    overflow-y: auto;
+    box-shadow: 0 8px 0 rgba(23, 23, 23, 0.12);
+  }
+  .mobile-menu a {
+    padding: 12px 0;
+    border-bottom: 1.5px solid rgba(23, 23, 23, 0.12);
+  }
+  .mobile-menu a:last-child { border-bottom: 0; }
+
+  html { scroll-padding-top: 76px; }   /* anchor jumps stop hiding under the sticky header */
+}
+
+@media (max-width: 640px) {
+  .mobile-menu {
+    top: 60px;                         /* your header is ~60px tall on small screens, not 76px */
+    max-height: calc(100dvh - 60px);
+  }
+  html { scroll-padding-top: 62px; }
+}
+
+/* on very small phones, brand + resume button + Menu don't fit in one row */
+@media (max-width: 480px) {
+  .nav-cta { display: none; }          /* resume link is already inside the menu */
+  .menu-toggle { margin-left: auto; }
+}
